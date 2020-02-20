@@ -177,42 +177,55 @@ public class PlataformaCursos
 
     public String cursoMasAntiguo() {
         String nombreMasAntiguo = "";
+        LocalDate fechaMasAntigua = LocalDate.MAX;
+        Set<Map.Entry<String, ArrayList<Curso>>> entradas = plataforma.entrySet();
+        Iterator<Map.Entry<String, ArrayList<Curso>>> it = entradas.iterator();
+        while(it.hasNext()){
+            Map.Entry<String, ArrayList<Curso>> entrada = it.next();
+            ArrayList<Curso> cursos = entrada.getValue();
+            for(Curso curso: cursos){
+                if(curso.getFecha().isBefore(fechaMasAntigua)){
+                    fechaMasAntigua = curso.getFecha();
+                    nombreMasAntiguo = curso.getNombre();
+                }
+            }
+        }
         return nombreMasAntiguo;
     }
 
-    // /**
-     // *  
-     // */
-    // public static void main(String[] args) {
-        // PlataformaCursos plataforma = new PlataformaCursos();
-        // plataforma.leerDeFichero();
-        // plataforma.escribir();
+    /**
+     *  
+     */
+    public static void main(String[] args) {
+        PlataformaCursos plataforma = new PlataformaCursos();
+        plataforma.leerDeFichero();
+        plataforma.escribir();
 
-        // System.out.println(
-            // "Curso más antiguo: " + plataforma.cursoMasAntiguo()
-            // + "\n");
+        System.out.println(
+            "Curso más antiguo: " + plataforma.cursoMasAntiguo()
+            + "\n");
 
-        // String categoria = "bases de datos";
-        // Nivel nivel = Nivel.AVANZADO;
-        // System.out.println("------------------");
-        // System.out.println(
-            // "Borrando cursos de " + categoria.toUpperCase()
-            // + " y nivel "
-            // + nivel);
-        // TreeSet<String> borrados = plataforma.borrarCursosDe(categoria, nivel);
+        String categoria = "bases de datos";
+        Nivel nivel = Nivel.AVANZADO;
+        System.out.println("------------------");
+        System.out.println(
+            "Borrando cursos de " + categoria.toUpperCase()
+            + " y nivel "
+            + nivel);
+        TreeSet<String> borrados = plataforma.borrarCursosDe(categoria, nivel);
 
-        // System.out.println("Borrados " + " = " + borrados.toString() + "\n");
-        // categoria = "cms";
-        // nivel = Nivel.INTERMEDIO;
-        // System.out.println(
-            // "Borrando cursos de " + categoria.toUpperCase()
-            // + " y nivel "
-            // + nivel);
-        // borrados = plataforma.borrarCursosDe(categoria, nivel);
-        // System.out.println("Borrados " + " = " + borrados.toString() + "\n");
-        // System.out.println("------------------\n");
-        // System.out.println(
-            // "Después de borrar ....");
-        // plataforma.escribir();
-    // }
+        System.out.println("Borrados " + " = " + borrados.toString() + "\n");
+        categoria = "cms";
+        nivel = Nivel.INTERMEDIO;
+        System.out.println(
+            "Borrando cursos de " + categoria.toUpperCase()
+            + " y nivel "
+            + nivel);
+        borrados = plataforma.borrarCursosDe(categoria, nivel);
+        System.out.println("Borrados " + " = " + borrados.toString() + "\n");
+        System.out.println("------------------\n");
+        System.out.println(
+            "Después de borrar ....");
+        plataforma.escribir();
+    }
 }
