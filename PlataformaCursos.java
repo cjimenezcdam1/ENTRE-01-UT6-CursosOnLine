@@ -45,8 +45,14 @@ public class PlataformaCursos
      *  
      */
     public void addCurso(String categoria, Curso curso) {
-
-
+        categoria = categoria.toUpperCase();
+        if(plataforma.get(categoria) == null){
+            ArrayList<Curso> cursos = new ArrayList<>();
+            cursos.add(curso);
+            plataforma.put(categoria, cursos);
+        }else{
+            plataforma.get(categoria).add(curso);
+        }
     }
 
     /**
@@ -55,8 +61,11 @@ public class PlataformaCursos
      *
      */
     public int totalCursosEn(String categoria) {
-
-        return 0;
+        categoria = categoria.toUpperCase(); 
+        if(plataforma.get(categoria) == null){
+            return -1;
+        }
+        return plataforma.get(categoria).size();
     }
 
     /**
@@ -72,6 +81,7 @@ public class PlataformaCursos
 
         return "";
     }
+
     /**
      * Mostrar la plataforma
      */
@@ -87,7 +97,6 @@ public class PlataformaCursos
      *  
      */
     public void leerDeFichero() {
-
         Scanner sc = new Scanner(
                 this.getClass().getResourceAsStream("/cursos.csv"));
         while (sc.hasNextLine())  {
@@ -97,7 +106,6 @@ public class PlataformaCursos
             Curso curso = obtenerCurso(lineaCurso.substring(p + 1));
             this.addCurso(categoria, curso);
         }
-
     }
 
     /**
@@ -114,6 +122,7 @@ public class PlataformaCursos
 
         return null;
     }
+
     /**
      * devuelve un nuevo conjunto con los nombres de todas las categorías  
      *  
@@ -136,13 +145,13 @@ public class PlataformaCursos
 
         return null;
     }
+
     /**
      *   Devuelve el nombre del curso más antiguo en la
      *   plataforma (el primero publicado)
      */
 
     public String cursoMasAntiguo() {
-
 
         return "";
     }
@@ -151,7 +160,6 @@ public class PlataformaCursos
      *  
      */
     public static void main(String[] args) {
-
         PlataformaCursos plataforma = new PlataformaCursos();
         plataforma.leerDeFichero();
         plataforma.escribir();
@@ -182,6 +190,5 @@ public class PlataformaCursos
         System.out.println(
             "Después de borrar ....");
         plataforma.escribir();
-
     }
 }
