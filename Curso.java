@@ -75,7 +75,8 @@ public class Curso
      *  de la forma "día nombre-mes año"  Ej. "03 diciembre 2019" 
      */
     public String getFechaFormateada() {
-        return "";
+        LocalDate hoy = fecha;
+        return hoy.format(DateTimeFormatter.ofPattern("dd MMMM yyyy"));
     }
 
     /**
