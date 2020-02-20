@@ -139,28 +139,26 @@ public class PlataformaCursos
         return new Curso(nombre, fecha, nivel);
     }
 
-    // /**
-     // * devuelve un nuevo conjunto con los nombres de todas las categorías  
-     // *  
-     // */
-    // public TreeSet<String> obtenerCategorias() {
+    /**
+     * devuelve un nuevo conjunto con los nombres de todas las categorías  
+     *  
+     */
+    public TreeSet<String> obtenerCategorias() {
+        return new TreeSet(plataforma.keySet());
+    }
 
-        // return null;
+    /**
+     * borra de la plataforma los cursos de la categoría y nivel indicados
+     * Se devuelve un conjunto (importa el orden) con los nombres de los cursos borrados 
+     * 
+     * Asumimos que existe la categoría
+     *  
+     */
 
-    // }
+    public      borrarCursosDe(String categoria, Nivel nivel) {
 
-    // /**
-     // * borra de la plataforma los cursos de la categoría y nivel indicados
-     // * Se devuelve un conjunto (importa el orden) con los nombres de los cursos borrados 
-     // * 
-     // * Asumimos que existe la categoría
-     // *  
-     // */
-
-    // public      borrarCursosDe(String categoria, Nivel nivel) {
-
-        // return null;
-    // }
+        return null;
+    }
 
     // /**
      // *   Devuelve el nombre del curso más antiguo en la
