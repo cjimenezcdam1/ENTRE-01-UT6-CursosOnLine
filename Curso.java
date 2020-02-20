@@ -36,7 +36,7 @@ public class Curso
     private String capitalizarNombre(String nombre) {
         nombre = nombre.trim();
         nombre = nombre.toLowerCase();
-        String[] palabrasNombre = nombre.split(" ");
+        String[] palabrasNombre = nombre.split(ESPACIO);
         StringBuilder nombreSB = new StringBuilder();
         for(int i = 0; i < palabrasNombre.length; i++){
             nombreSB.append(palabrasNombre[i].substring(0, 1).toUpperCase());
