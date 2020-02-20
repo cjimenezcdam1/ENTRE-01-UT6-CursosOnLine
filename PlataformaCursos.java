@@ -155,20 +155,30 @@ public class PlataformaCursos
      *  
      */
 
-    public      borrarCursosDe(String categoria, Nivel nivel) {
-
-        return null;
+    public TreeSet<String> borrarCursosDe(String categoria, Nivel nivel) {
+        TreeSet<String> cursosBorrados = new TreeSet<>();
+        categoria = categoria.toUpperCase();
+        ArrayList<Curso> cursosDeCategoria = plataforma.get(categoria);
+        Iterator<Curso> it = cursosDeCategoria.iterator();
+        while(it.hasNext()){
+            Curso curso = it.next();
+            if(nivel.equals(curso.getNivel())){
+                cursosBorrados.add(curso.getNombre());
+                it.remove();
+            }
+        }
+        return cursosBorrados;
     }
 
-    // /**
-     // *   Devuelve el nombre del curso más antiguo en la
-     // *   plataforma (el primero publicado)
-     // */
+    /**
+     *   Devuelve el nombre del curso más antiguo en la
+     *   plataforma (el primero publicado)
+     */
 
-    // public String cursoMasAntiguo() {
-
-        // return "";
-    // }
+    public String cursoMasAntiguo() {
+        String nombreMasAntiguo = "";
+        return nombreMasAntiguo;
+    }
 
     // /**
      // *  
