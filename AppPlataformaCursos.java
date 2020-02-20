@@ -1,6 +1,7 @@
 /**
  *  Punto de entrada a la aplicación
  *  
+ *  @author Christian Jiménez Cuesta
  *   
  */
 public class AppPlataformaCursos

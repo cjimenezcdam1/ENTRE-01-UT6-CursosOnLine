@@ -17,6 +17,9 @@ import java.util.TreeSet;
  * 
  * Las claves en el map se recuperan en orden alfabético y 
  * se guardan siempre en mayúsculas
+ * 
+ * @author Christian Jiménez Cuesta
+ * 
  */
 public class PlataformaCursos
 {

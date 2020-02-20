@@ -1,6 +1,8 @@
 /**
  * Interfaz de texto
  *  
+ *  @author Christian Jiménez Cuesta
+ *  
  */
 import java.util.Scanner;
 import java.util.TreeSet;
