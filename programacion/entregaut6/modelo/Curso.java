@@ -1,3 +1,5 @@
+package programacion.entregaut6.modelo;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -75,8 +77,7 @@ public class Curso
      *  de la forma "día nombre-mes año"  Ej. "03 diciembre 2019" 
      */
     public String getFechaFormateada() {
-        LocalDate hoy = fecha;
-        return hoy.format(DateTimeFormatter.ofPattern("dd MMMM yyyy"));
+        return fecha.format(DateTimeFormatter.ofPattern("dd MMMM yyyy"));
     }
 
     /**
