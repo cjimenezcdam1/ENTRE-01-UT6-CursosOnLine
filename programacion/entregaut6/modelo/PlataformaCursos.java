@@ -110,7 +110,7 @@ public class PlataformaCursos
      */
     public void leerDeFichero() {
         Scanner sc = new Scanner(
-                this.getClass().getResourceAsStream("/programacion/cursos.csv"));
+                this.getClass().getResourceAsStream("/cursos.csv"));
         while (sc.hasNextLine())  {
             String lineaCurso = sc.nextLine().trim();
             int p = lineaCurso.indexOf(SEPARADOR);

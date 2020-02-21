@@ -26,6 +26,8 @@ public class AppPlataformaCursos
  *  javac programacion\entregaut6\modelo\PlataformaCursos.java
  *  javac programacion\entregaut6\interfaz\IUConsola.java
  *  javac programacion\entregaut6\demo\AppPlataformaCursos.java
+ *  (En realidad las anteriores no las he hecho, porque se compila automaticamente)
+ *  Solo hecha esta sentencia...
  *  java programacion.entregaut6.demo.AppPlataformaCursos (Ejecutar)
  * 
  * Apartado g)
