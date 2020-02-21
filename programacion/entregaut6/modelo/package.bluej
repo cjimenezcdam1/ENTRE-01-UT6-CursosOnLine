@@ -1,11 +1,11 @@
 #BlueJ package file
-dependency1.from=PlataformaCursos
-dependency1.to=Curso
+dependency1.from=Curso
+dependency1.to=Nivel
 dependency1.type=UsesDependency
 dependency2.from=PlataformaCursos
-dependency2.to=Nivel
+dependency2.to=Curso
 dependency2.type=UsesDependency
-dependency3.from=Curso
+dependency3.from=PlataformaCursos
 dependency3.to=Nivel
 dependency3.type=UsesDependency
 objectbench.height=93
